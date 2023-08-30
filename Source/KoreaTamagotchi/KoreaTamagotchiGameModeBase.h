@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "HTTP.h"
 #include "KoreaTamagotchiGameModeBase.generated.h"
+
 
 /**
  * 
@@ -14,4 +16,11 @@ class KOREATAMAGOTCHI_API AKoreaTamagotchiGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+
+public:
+	virtual void BeginPlay() override;
+
+public:
+	UFUNCTION()
+	void OnResponseReceived(FHttpRequestPtr Response, bool bConnectedSucceessfully);
 };
