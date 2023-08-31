@@ -9,10 +9,14 @@
 void ULoginWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
+	//Button Send Login Widget Bind.
+	btn_Login->OnClicked.AddDynamic(this,&ULoginWidget::SendLogin);
+
+	
  //login session을 웹서버에 보낼 것이다.
 }
 
 void ULoginWidget::SendLogin()
 {
-
+	
 }
