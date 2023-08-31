@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "HTTP.h"
+#include "Http.h"
 #include "KoreaTamagotchiGameModeBase.generated.h"
 
 
@@ -21,6 +21,7 @@ public:
 	virtual void BeginPlay() override;
 
 public:
-	UFUNCTION()
-	void OnResponseReceived(FHttpRequestPtr Response, bool bConnectedSucceessfully);
+	/*UFUNCTION()
+	void OnResponseReceived(FHttpRequestPtr Response, bool bConnectedSucceessfully);*/
+	void OnResponseReceived(FHttpRequestPtr reque, FHttpResponsePtr response, bool bConnet);
 };
