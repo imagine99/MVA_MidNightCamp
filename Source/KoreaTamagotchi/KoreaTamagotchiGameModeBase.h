@@ -21,7 +21,16 @@ public:
 	virtual void BeginPlay() override;
 
 public:
-	/*UFUNCTION()
-	void OnResponseReceived(FHttpRequestPtr Response, bool bConnectedSucceessfully);*/
 	void OnResponseReceived(FHttpRequestPtr reque, FHttpResponsePtr response, bool bConnet);
+	//void OnResponseReceived(FHttpRequestPtr Response, bool bConnectedSucceessfully);*/
+
+
+	UPROPERTY(EditAnywhere, Category=MySettings)
+	TSubclassOf<class UjsonWidget> jsonWidget;
+
+	void SetLogText(const FString msg);
+	void SetImageTexture(class UTexture2D* tex);
+
+private:
+	class UHttpWidget* httpUI;
 };
