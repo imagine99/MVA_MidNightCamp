@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Interfaces/IHttpRequest.h"
+#include "Interfaces/IHttpResponse.h"
 #include "HttpRequestActor.generated.h"
+
 
 UCLASS()
 class KOREATAMAGOTCHI_API AHttpRequestActor : public AActor
@@ -24,10 +27,15 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 	//#1. GET -> server에서 데이터 받아오기 함수
-	//void SendRequest(const FString url);
+	void SendRequest(const FString url);
+
+	//#2. POST-> server에 데이터 전송하기 함수
+	void PostRequest(const FString url);
 
 private:
-	//void OnReceivedData(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccessfully);
+	void OnReceivedData(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccessfully);
+
+	void OnPostData(TSharedPtr<IHttpRequest> Request, TSharedPtr<IHttpResponse>Response, bool bConnectedSuccessfully);
 	
 	UPROPERTY()
 	class ALoginGameModeBase* gm ;

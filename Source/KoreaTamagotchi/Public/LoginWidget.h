@@ -56,4 +56,11 @@ public:
 	/*----------------------------------FUNCTION----------*/
 	UFUNCTION()
 	void SendLogin();
+	UFUNCTION()
+	void PostRequest();
+
+public:
+	FString id = "qwer";
+	FString password = "qwer";
+
 };
