@@ -14,4 +14,15 @@ class KOREATAMAGOTCHI_API ALoginGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	protected:
+	virtual void BeginPlay() override;
+
+public:
+	UPROPERTY(EditAnywhere, Category = MySettings)
+	TSubclassOf<class ULoginWidget> httpWidget;
+		
+	void SetLogText(const FString msg);
+
+public:	
+	class ULoginWidget* httpUI;
 };
