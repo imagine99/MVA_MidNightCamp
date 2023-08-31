@@ -56,7 +56,8 @@ void AKoreaTamagotchiGameModeBase::OnResponseReceived(FHttpRequestPtr reque, FHt
 
 	UE_LOG(LogTemp, Display, TEXT("Response %s"), *response->GetContentAsString());
 	UE_LOG(LogTemp, Display, TEXT("id: %s"), *Responseobj->GetStringField("id"));
-	UE_LOG(LogTemp, Display, TEXT("password: %s"), *Responseobj->GetStringField("password"));
+	UE_LOG(LogTemp, Display, TEXT("password: %s"), *Responseobj->GetStringField("password"));  
+
 }
 
 //void AKoreaTamagotchiGameModeBase::OnResponseReceived(FHttpRequestPtr Response, bool bConnectedSucceessfully)
